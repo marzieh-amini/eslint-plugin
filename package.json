@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin",
+  "name": "eslint-plugin-modern",
   "version": "1.0.0",
   "description": "Custom ESLint plugin for React + TypeScript (console, import, spell, type-check)",
  "main": "lib/index.js",
