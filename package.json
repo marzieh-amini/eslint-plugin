@@ -1,14 +1,19 @@
 {
   "name": "eslint-plugin",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Custom ESLint plugin for React + TypeScript (console, import, spell, type-check)",
+ "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": ["lib"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "pnpm run build && jest --config jest.config.cjs",
+    "prepublishOnly": "pnpm run typecheck && pnpm run build && pnpm test"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+ "keywords": ["eslint","eslintplugin","eslint-plugin","typescript","react"],
+  "license": "MIT",
   "packageManager": "pnpm@10.15.1",
   "devDependencies": {
     "@cspell/eslint-plugin": "^9.2.1",

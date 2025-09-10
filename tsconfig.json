@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "outDir": "dist",
+    "baseUrl": "src",
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true
+  },
+  "include": ["src"],
+  "exclude": ["src/core/paths.ts"]
+}
