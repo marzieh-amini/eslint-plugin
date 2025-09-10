@@ -2,11 +2,26 @@ import { Linter } from "eslint";
 
 const recommended: Linter.Config = {
   plugins: {
-     modern: {} 
+    modern: {},
+    "@cspell": {},
   },
   rules: {
-    "clean/no-console": "error"
-  }
+    "modern/no-console": "error",
+    "@cspell/spellchecker": [
+      "warn",
+      {
+        checkComments: true,
+        checkStrings: true,
+        checkIdentifiers: false,
+        cspell: {
+          language: "en-US",
+          ignoreRegExpList: [
+            /[\u0600-\u06FF]/g,
+          ],
+        },
+      },
+    ],
+  },
 };
 
 export default recommended;
