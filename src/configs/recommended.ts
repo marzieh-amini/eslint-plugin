@@ -15,9 +15,7 @@ const recommended: Linter.Config = {
         checkIdentifiers: false,
         cspell: {
           language: "en-US",
-          ignoreRegExpList: [
-            /[\u0600-\u06FF]/g,
-          ],
+          ignoreRegExpList: [/[\u0600-\u06FF]/g],
         },
       },
     ],

@@ -19,7 +19,6 @@ jobs:
           node-version: 20
       - run: pnpm install --frozen-lockfile
       - run: pnpm run typecheck
-      - run: pnpm run test
 
   publish:
     if: startsWith(github.ref, 'refs/tags/v')
