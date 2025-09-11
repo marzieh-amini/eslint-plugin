@@ -1,18 +1,24 @@
-import tseslint from "typescript-eslint";
+import eslintPluginTs from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 
-export default tseslint.config({
-  files: ["src/**/*.ts", "src/**/*.tsx"],
-  languageOptions: {
-    parser: tseslint.parser,
-    parserOptions: {
-      project: "./tsconfig.json"
+export default [
+   {
+    ignores: ["lib/**", "dist/**", "*.d.ts"],
+  },
+  {
+    files: ["src/**/*.ts", "src/**/*.tsx"],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        project: "./tsconfig.json"
+      }
+    },
+    plugins: {
+      "@typescript-eslint": eslintPluginTs
+    },
+    rules: {
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-explicit-any": "warn"
     }
-  },
-  plugins: {
-    "@typescript-eslint": tseslint.plugin
-  },
-  rules: {
-    "@typescript-eslint/no-unused-vars": "warn",
-    "@typescript-eslint/no-explicit-any": "warn"
   }
-});
+];
